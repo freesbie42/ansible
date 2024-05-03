@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Stop service httpd, if started
+    ansible.builtin.service:
+      name: apache2
+      state: stopped
+
+  - name: install apache2 to package
+    apt:
+      name: apache2
+      state: absent
+
+  - name: add php support
+    apt:
+      name: libapache2-mod-php
+      state: absent
+

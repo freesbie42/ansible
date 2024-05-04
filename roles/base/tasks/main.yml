@@ -1,0 +1,6 @@
+- name: add ssh key for ma
+  authorized_key:
+    user: ma
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFunAVxfqYJKaXU3nDCFZ/x2NJa15vuj1rF5NVw2lM1d ma"
+
+    

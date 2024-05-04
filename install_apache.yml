@@ -4,21 +4,16 @@
   become: true
   tasks:
 
-  - name: udpate repo index 
-    apt:
+- name: install apache to package
+    package:
+      name: 
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
       update_cache: yes
 
-  - name: install apache2 to package
-    apt:
-      name: apache2
-      state: latest
-
-  - name: add php support 
-    apt: 
-      name: libapache2-mod-php
-      state: latest
-
-  - name: start apache2 service 
+  - name: start apache service 
     ansible.builtin.service:
       name: apache2
       state: started
+
